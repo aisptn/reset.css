@@ -1,0 +1,61 @@
+:root {
+    color-scheme: dark light;
+    --primary: black;
+    --secondary: white;
+    --accent: gray;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[type="radio"] {
+    background: var(--primary);
+    border: 1px solid;
+    padding: 0.5em;
+}
+
+button:hover,
+[type="button"]:hover,
+[type="reset"]:hover,
+[type="submit"]:hover {
+    filter: invert();
+}
+
+button:active,
+[type="button"]:active,
+[type="reset"]:active,
+[type="submit"]:active {
+    filter: invert(0.25);
+}
+
+label {
+    display: inline-grid;
+    place-content: center;
+    position: relative;
+    padding: 0.5em;
+}
+
+[type="radio"] {
+    appearance: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+label:has([type="radio"]:checked) {
+    filter: invert();
+}
+
+label:has([type="radio"]):hover {
+    filter: invert();
+}
