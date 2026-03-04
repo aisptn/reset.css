@@ -37,6 +37,13 @@ button:active,
     filter: invert(0.25);
 }
 
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+    cursor: not-allowed;
+}
+
 label {
     display: inline-grid;
     place-content: center;
