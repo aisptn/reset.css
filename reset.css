@@ -15,6 +15,10 @@ body {
     user-select: none;
 }
 
+button, input, select, textarea {
+  font: inherit;
+}
+
 button,
 [type="button"],
 [type="reset"],
