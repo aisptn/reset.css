@@ -24,6 +24,7 @@ button,
 [type="reset"],
 [type="submit"],
 [type="radio"] {
+    background: canvas;
     border: none;
     padding: 0.5em;
 }
@@ -32,14 +33,14 @@ button:hover,
 [type="button"]:hover,
 [type="reset"]:hover,
 [type="submit"]:hover {
-    filter: invert(0.25);
+    filter: invert(calc(1/3));
 }
 
 button:active,
 [type="button"]:active,
 [type="reset"]:active,
 [type="submit"]:active {
-    filter: invert(0.75);
+    filter: invert(calc(2/3));
 }
 
 button:disabled,
@@ -68,10 +69,10 @@ label:has(input) {
 
 label:has([type="radio"]) {
     &:hover {
-        filter: invert(0.25);
+        filter: invert(calc(1/3));
     }
     &:active {
-        filter: invert(0.75);
+        filter: invert(calc(2/3));
     }
 }
 
