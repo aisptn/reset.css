@@ -1,15 +1,17 @@
 :root {
-    color-scheme: dark light;
-    --primary: black;
-    --secondary: white;
-    --accent: gray;
+    font: 16px monospace;
 }
 
 * {
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
+    &::before,
+    &::after {
+       box-sizing: border-box;
+    }
+}
+
+body {
     user-select: none;
 }
 
@@ -18,8 +20,7 @@ button,
 [type="reset"],
 [type="submit"],
 [type="radio"] {
-    background: var(--primary);
-    border: 1px solid;
+    border: none;
     padding: 0.5em;
 }
 
@@ -27,42 +28,60 @@ button:hover,
 [type="button"]:hover,
 [type="reset"]:hover,
 [type="submit"]:hover {
-    filter: invert();
+    filter: invert(0.25);
 }
 
 button:active,
 [type="button"]:active,
 [type="reset"]:active,
 [type="submit"]:active {
-    filter: invert(0.25);
+    filter: invert(0.75);
 }
 
 button:disabled,
 [type="button"]:disabled,
 [type="reset"]:disabled,
-[type="submit"]:disabled {
+[type="submit"]:disabled,
+[type="radio"]:disabled {
     cursor: not-allowed;
 }
 
-label {
+label:has(input) {
+    background: canvas;
+    color: canvasText;
     display: inline-grid;
     place-content: center;
     position: relative;
     padding: 0.5em;
+    [type="radio"] {
+        appearance: none;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
 }
 
-[type="radio"] {
-    appearance: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+label:has([type="radio"]) {
+    &:hover {
+        filter: invert(0.25);
+    }
+    &:active {
+        filter: invert(0.75);
+    }
 }
 
 label:has([type="radio"]:checked) {
-    filter: invert();
+    filter: invert(1);
 }
 
-label:has([type="radio"]):hover {
-    filter: invert();
+.filled {
+    background: canvasText;
+    color: canvas;
+}
+
+.outline {
+    background: canvas;
+    border: 1px solid;
+    color: canvasText;
 }
