@@ -59,6 +59,10 @@ label:has([type="radio"]:checked) {
     filter: invert(1);
 }
 
+label:has([type="radio"]:disabled) {
+    opacity: 0.5;
+}
+
 label:has([type="radio"]:focus-visible) {
     outline: auto;
 }
