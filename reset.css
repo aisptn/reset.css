@@ -5,8 +5,10 @@
 * {
     margin: 0;
     padding: 0;
-
-    &::before, &::after { box-sizing: border-box; }
+    box-sizing: border-box;
+}
+*::before, *::after {
+    box-sizing: border-box;
 }
 
 button, input, select, textarea {
@@ -40,12 +42,12 @@ button,
 }
 
 label {
-    &:has(input) {
+    &:has(input[type="radio"]), &:has(input[type="checkbox"]) {
         background: Canvas;
         color: CanvasText;
         display: inline-grid;
-        position: relative;
         padding: 0.5em;
+        position: relative;
 
         [type="radio"], [type="checkbox"] {
             opacity: 0;
