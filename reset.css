@@ -5,74 +5,60 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    user-select: none;
+    &::before, &::after { box-sizing: border-box; }
 }
 
 button, input, select, textarea {
-  font: inherit;
+    font: inherit;
 }
 
 button,
 [type="button"],
 [type="reset"],
 [type="submit"],
-[type="radio"],
-[type="date"],
-[type="datetime"],
-[type="datetime-local"],
-[type="email"] {
-background: canvas;
-    border: none;
-    padding: 0.5em;
+label:has([type="radio"]),
+label:has([type="checkbox"]) {
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
 
     &:hover { filter: invert(calc(1/3)); }
     &:active { filter: invert(calc(2/3)); }
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    background: Canvas;
+    border: none;
+    padding: 0.5em;
+
+    &:focus-visible { outline: auto; }
     &:disabled { cursor: not-allowed; }
 }
 
-/* [type="file"]::file-selector-button {
-    background: canvas;
-    border: none;
-    padding: 0.5em;
-
-    &:hover { filter: invert(calc(1/3)); }
-    &:active { filter: invert(calc(2/3)); }
-    &:disabled { cursor: not-allowed; }
-} */
-
-label{
+label {
     &:has(input) {
-        background: canvas;
-        color: canvasText;
+        background: Canvas;
+        color: CanvasText;
         display: inline-grid;
-        place-content: center;
         position: relative;
         padding: 0.5em;
-        overflow: hidden;
-        
-        [type="radio"], [type="checkbox"] {
-            appearance: none;
-            position: absolute;
-            inset: 0;
-            margin: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-    }
 
-    &:has([type="radio"]), &:has([type="checkbox"]) {
-        &:hover { filter: invert(calc(1/3)); }
-        &:active { filter: invert(calc(2/3)); }
+        [type="radio"], [type="checkbox"] {
+            opacity: 0;
+            position: absolute;
+        }
     }
 
     &:has([type="radio"]:checked), &:has([type="checkbox"]:checked) {
         filter: invert(1);
+        &:hover { filter: invert(calc(2/3)); }
+        &:active { filter: invert(calc(1/3)); }
     }
-    
+
     &:has([type="radio"]:disabled), &:has([type="checkbox"]:disabled) {
         opacity: 0.5;
     }
@@ -83,12 +69,13 @@ label{
 }
 
 .filled {
-    background: canvasText;
-    color: canvas;
+    background: CanvasText;
+    border: 1px solid;
+    color: Canvas;
 }
 
 .outline {
-    background: canvas;
+    background: Canvas;
     border: 1px solid;
-    color: canvasText;
+    color: CanvasText;
 }
