@@ -44,14 +44,16 @@ button,
 }
 
 label {
-    &:has(input[type="radio"]), &:has(input[type="checkbox"]) {
+    &:has([type="radio"]),
+    &:has([type="checkbox"]) {
         background: Canvas;
         color: CanvasText;
         display: inline-grid;
         padding: 0.5em;
         position: relative;
 
-        [type="radio"], [type="checkbox"] {
+        [type="radio"],
+        [type="checkbox"] {
             height: 0;
             width: 0;
             opacity: 0;
