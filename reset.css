@@ -13,7 +13,10 @@
     }
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
     font: inherit;
 }
 
@@ -27,8 +30,14 @@ label:has([type="checkbox"]) {
     user-select: none;
     -moz-user-select: none;
 
-    &:hover { filter: invert(calc(1/3)); }
-    &:active { filter: invert(calc(2/3)); }
+    &:hover {
+        filter: invert(calc(1/3));
+
+        &:active {
+            filter: invert(calc(2/3));
+        }
+    }
+
 }
 
 button,
@@ -38,12 +47,18 @@ button,
     background: Canvas;
     border: none;
     padding: 0.5em;
-    
-    &:focus-visible { outline: auto; }
-    &:disabled { cursor: not-allowed; }
+
+    &:focus-visible {
+        outline: auto;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 label {
+
     &:has([type="radio"]),
     &:has([type="checkbox"]) {
         background: Canvas;
@@ -65,8 +80,14 @@ label {
     &:has([type="checkbox"]:checked) {
         filter: invert(1);
 
-        &:hover { filter: invert(calc(2/3)); }
-        &:active { filter: invert(calc(1/3)); }
+        &:hover {
+            filter: invert(calc(2/3));
+
+            &:active {
+                filter: invert(calc(1/3));
+            }
+        }
+
     }
 
     &:has([type="radio"]:disabled),
